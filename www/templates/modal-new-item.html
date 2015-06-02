@@ -1,0 +1,19 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <button class="button button-clear button-positive" ng-click="closeNewItemModal()">Cancel</button>
+    <h1 class="title">New Item</h1>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="createItem(item)">
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">What you want to buy?</span>
+          <input type="text" placeholder="What you want to buy?" ng-model="item.name">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">Add Item</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

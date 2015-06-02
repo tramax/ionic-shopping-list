@@ -1,0 +1,16 @@
+<ion-view view-title="Items">
+  <ion-nav-buttons side="right">
+    <button class="button button-positive button-clear icon ion-plus-round" ng-click="openNewItemModal()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in items" ng-click="toggleDone(item)">
+        <span ng-class="{done: item.done}">{{item.name}}</span>
+        <ion-option-button class="button-assertive" ng-click="remove(item)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
