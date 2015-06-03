@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('ListCtrl', function($scope, $ionicModal, Items) {
+.controller('ItemsCtrl', function($scope, $ionicModal, $state, Items) {
   $scope.items = Items.all();
 
   // Create and load the Modal
@@ -34,6 +34,11 @@ angular.module('starter.controllers', [])
     item.name = "";
   };
 
+  // Go to item detail page
+  $scope.goToItemDetail = function(itemId) {
+    $state.go('tab.item-detail', {itemId: itemId});
+  };
+
   $scope.toggleDone = function(item) {
     Items.toggleDone(item);
   };
@@ -42,6 +47,10 @@ angular.module('starter.controllers', [])
     Items.remove(item);
   };
 
+})
+
+.controller('ItemDetailCtrl', function($scope, $stateParams, Items) {
+  $scope.item = Items.get($stateParams.itemId);
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

@@ -51,15 +51,23 @@ angular.module('starter.services', [])
 
 .factory('Items', function() {
   var items = [
-    {name: 'Bananas', done: false},
-    {name: 'Eggs', done: false},
-    {name: 'Avocados', done: true},
-    {name: 'Almond milk', done: false},
+    {id: 1, name: 'Bananas', done: false},
+    {id: 2, name: 'Eggs', done: false},
+    {id: 3, name: 'Avocados', done: true},
+    {id: 4, name: 'Almond milk', done: false},
   ];
 
   return {
     all: function() {
       return items;
+    },
+    get: function(itemId) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].id === parseInt(itemId)) {
+          return items[i];
+        }
+      }
+      return null;
     },
     remove: function(item) {
       items.splice(items.indexOf(item), 1);
