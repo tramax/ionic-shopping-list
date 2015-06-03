@@ -26,7 +26,9 @@ angular.module('starter.controllers', [])
 
   // Called when the form is submitted
   $scope.createItem = function(item) {
+    timeStamp = new Date();
     $scope.items.push({
+      id: timeStamp.valueOf(),
       name: item.name,
       done: false
     });
@@ -51,6 +53,10 @@ angular.module('starter.controllers', [])
 
 .controller('ItemDetailCtrl', function($scope, $stateParams, Items) {
   $scope.item = Items.get($stateParams.itemId);
+})
+
+.controller('ReminderCtrl', function($scope) {
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

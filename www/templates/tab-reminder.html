@@ -1,4 +1,18 @@
-<ion-view view-title="Chats">
+<ion-view view-title="Reminder">
+  <ion-content>
+    <ion-list>
+      <ion-toggle ng-model="reminder.onDay">
+          Remind me on a day
+      </ion-toggle>
+      <label class="item item-input">
+        <span class="input-label">Alarm</span>
+        <input type="datetime-local">
+      </label>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+<!-- <ion-view view-title="Chats">
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
@@ -13,4 +27,4 @@
       </ion-item>
     </ion-list>
   </ion-content>
-</ion-view>
+</ion-view> -->
