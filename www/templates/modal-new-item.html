@@ -4,15 +4,19 @@
     <h1 class="title">New Item</h1>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="createItem(item)">
+    <form ng-submit="createItem(item)" name="newItem">
       <div class="list">
         <label class="item item-input item-floating-label">
           <span class="input-label">What you want to buy?</span>
-          <input type="text" placeholder="What you want to buy?" ng-model="item.name">
+          <input type="text" placeholder="What you want to buy?" ng-model="item.name" required>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">What is the quantity? (Optional)</span>
+          <input type="text" placeholder="What is the quantity? (Optional)" ng-model="item.quantity">
         </label>
       </div>
       <div class="padding">
-        <button type="submit" class="button button-block button-positive">Add Item</button>
+        <button type="submit" class="button button-block button-positive" ng-disabled="newItem.$invalid">Add Item</button>
       </div>
     </form>
   </ion-content>

@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('ItemsCtrl', function($scope, $ionicModal, $state, Items) {
+  $scope.shouldShowReorder = false;
   $scope.items = Items.all();
 
   // Create and load the Modal
@@ -30,10 +31,20 @@ angular.module('starter.controllers', [])
     $scope.items.push({
       id: timeStamp.valueOf(),
       name: item.name,
-      done: false
+      done: false,
+      createdAt: timeStamp.toLocaleString(),
+      quantity: item.quantity
     });
     $scope.itemModal.hide();
     item.name = "";
+    item.quantity = "";
+  };
+
+  // Reorder items
+  $scope.moveItem = function(item, fromIndex, toIndex) {
+    //Move the item in the array
+    $scope.items.splice(fromIndex, 1);
+    $scope.items.splice(toIndex, 0, item);
   };
 
   // Go to item detail page

@@ -5,9 +5,35 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{item.name}}">
-  <ion-content class="padding">
-    <p>
-      {{item.name}}
-    </p>
+  <ion-content>
+    <div class="list">
+      <div class="card">
+        <div class="item item-divider">
+          Name
+        </div>
+        <div class="item item-text-wrap">
+          {{item.name}}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-divider">
+          Quantity
+        </div>
+        <div class="item item-text-wrap">
+          {{item.quantity}}
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="item item-divider">
+          Created at
+        </div>
+        <div class="item item-text-wrap">
+          {{item.createdAt}}
+        </div>
+      </div>
+
+    </div>
   </ion-content>
 </ion-view>
