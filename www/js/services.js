@@ -51,10 +51,10 @@ angular.module('starter.services', [])
 
 .factory('Items', function() {
   var items = [
-    {id: 1, name: 'Bananas', done: false, createdAt: 'sss'},
-    {id: 2, name: 'Eggs', done: false, createdAt: 'sss'},
-    {id: 3, name: 'Avocados', done: true, createdAt: 'sss'},
-    {id: 4, name: 'Almond milk', done: false, createdAt: 'sss'},
+    {id: 1, name: 'Bananas', quantity: '', done: false, createdAt: new Date().toLocaleString()},
+    {id: 2, name: 'Eggs', quantity: '4 blocks', done: false, createdAt: new Date().toLocaleString()},
+    {id: 3, name: 'Avocados', quantity: '3', done: true, createdAt: new Date().toLocaleString()},
+    {id: 4, name: 'Almond milk', quantity: '2 litres', done: false, createdAt: new Date().toLocaleString()},
   ];
 
   return {
