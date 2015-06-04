@@ -1,12 +1,12 @@
 <ion-view view-title="Items">
   <ion-nav-buttons side="right">
-    <button class="button button-positive button-clear icon ion-plus" ng-click="openNewItemModal()">
+    <button class="button button-royal button-clear icon ion-plus-circled" ng-click="openNewItemModal()">
     </button>
   </ion-nav-buttons>
   <ion-content>
     <ion-list show-reorder="shouldShowReorder" show-delete="shouldShowReorder">
       <ion-item ng-repeat="item in items" ng-click="toggleDone(item)">
-        <i class="icon positive" ng-class="{'ion-ios-circle-outline': !item.done, 'ion-ios-checkmark': item.done}"></i>
+        <i class="icon royal" ng-class="{'ion-ios-circle-outline': !item.done, 'ion-ios-checkmark': item.done}"></i>
         <span ng-class="{'done': item.done}">
           {{item.name}}
           <span class="item-note">

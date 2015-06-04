@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <button class="button button-clear button-positive" ng-click="closeEditItemModal()">Cancel</button>
+    <h1 class="title">Edit Item</h1>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="updateItem(oldItem)">
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Name</span>
+          <input type="text" placeholder="Name" ng-model="oldItem.name" required>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Quantity</span>
+          <input type="text" placeholder="Quantity" ng-model="oldItem.quantity">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive" ng-disabled="newItem.$invalid">Apply</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
